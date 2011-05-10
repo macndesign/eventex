@@ -1,3 +1,102 @@
-body {
-    background: #f0ffff;
+@font-face {
+	font-family: 'Helsinki';
+	src: url('../font/helsinki-webfont.eot');
+	src: local('☺'), url('../font/helsinki-webfont.woff') format('woff'), url('../font/helsinki-webfont.ttf') format('truetype'), url('../font/helsinki-webfont.svg#webfont5TvLDl3w') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+article, section, aside, hgroup, nav, header, footer, figure, figcaption {
+  display: block;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: #fff;
+}
+html, body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  height: 100%;
+  background: #b2e1ff; /* old browsers */
+  background: -moz-linear-gradient(top, #b2e1ff 0%, #66b6fc 100%); /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b2e1ff), color-stop(100%,#66b6fc)); /* webkit */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=0 ); /* ie */
+}
+.container {
+  min-height: 100%;
+  width: 960px;
+  margin: 0 auto;
+}
+* html .container {
+  height: 100%;
+}
+header h1 {
+  display: inline-block;
+  font-family: Helsinki, Arial Black, Gadget, sans-serif;
+  padding: 40px 50px 5px 0px;
+  font-size: 60px;
+  background: url(../img/bubble.png) no-repeat right 47px;
+  text-shadow: 1px 1px 1px #42607a;
+  filter: dropshadow(color=#42607a, offx=1, offy=1);
+}
+header h1 a {
+  text-decoration: none;
+}
+header h2 {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin: 0px 0px 30px 0px;
+  font-size: 14px;
+  color: #627077;
+}
+.questions {
+  list-style: none;
+}
+.question > a {
+  font-family: Helsinki, Arial Black, Gadget, sans-serif;
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px #42607a;
+  filter: dropshadow(color=#42607a, offx=1, offy=1);
+  -webkit-transition: all .5s ;
+  -moz-transition: all .5s ;
+  -o-transition: all .5s ;
+  transition: all .5s ;
+}
+.question > a:hover {
+  color: #cbffff;
+}
+.single .question > a {
+  font-size: 40px;
+}
+.single .question > a:hover {
+  color: #fff;
+}
+.answers {
+  width: 960px;
+  list-style: none;
+  overflow: auto;
+  margin: 10px 0px 30px 0px;
+}
+.answers li {
+  float: left;
+  width: 460px;
+  margin: 10px;
+}
+nav ul {
+  list-style: none;
+  overflow: auto;
+}
+nav ul li {
+  float: left;
+  margin-right: 20px;
+}
+nav ul li a:hover {
+  text-decoration: none;
+}
+footer {
+  font-size: 12px;
+  margin: 40px 0px;
+  color: #627077;
 }
