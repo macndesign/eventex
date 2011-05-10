@@ -55,29 +55,29 @@ MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = '/media/'
 
-# Absolute path to the directory public files should be collected to.
-# Don't put anything in this directory yourself; store your public files
-# in apps' "public/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/public/"
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'public')
+# Absolute path to the directory static files should be collected to.
+# Don't put anything in this directory yourself; store your static files
+# in apps' "static/" subdirectories and in STATICFILES_DIRS.
+# Example: "/home/media/media.lawrence.com/static/"
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
-# URL prefix for public files.
-# Example: "http://media.lawrence.com/public/"
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
-# URL prefix for admin public files -- CSS, JavaScript and images.
+# URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
-# Examples: "http://foo.com/public/admin/", "/public/admin/".
+# Examples: "http://foo.com/static/admin/", "/static/admin/".
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
-# Additional locations of public files
+# Additional locations of static files
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/public" or "C:/www/django/public".
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
 
-# List of finder classes that know how to find public files in
+# List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
