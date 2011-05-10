@@ -3,6 +3,7 @@ from django.conf.urls.defaults import patterns, include, url
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from core.views import homepage
 
 urlpatterns = patterns('',
@@ -17,3 +18,5 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     (r'^$', homepage),
 )
+
+urlpatterns += staticfiles_urlpatterns()
