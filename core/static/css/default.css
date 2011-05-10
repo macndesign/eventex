@@ -42,17 +42,18 @@ header h1 {
 }
 header h1 a {
   text-decoration: none;
+  color: #90ee90;
 }
-header h2 {
+header h2, .view h2 {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   margin: 0px 0px 30px 0px;
   font-size: 14px;
   color: #627077;
 }
-.questions {
+.itens {
   list-style: none;
 }
-.question > a {
+.item > p {
   font-family: Helsinki, Arial Black, Gadget, sans-serif;
   text-decoration: none;
   color: #fff;
@@ -64,13 +65,16 @@ header h2 {
   -o-transition: all .5s ;
   transition: all .5s ;
 }
-.question > a:hover {
+.item > p:hover {
   color: #cbffff;
 }
-.single .question > a {
+.item > p > strong {
+    color: #90ee90;
+}
+.single .item > p {
   font-size: 40px;
 }
-.single .question > a:hover {
+.single .item > p:hover {
   color: #fff;
 }
 .answers {
