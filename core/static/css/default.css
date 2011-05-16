@@ -40,6 +40,14 @@ header h1 {
   text-shadow: 1px 1px 1px #42607a;
   filter: dropshadow(color=#42607a, offx=1, offy=1);
 }
+.view h1 {
+  display: inline-block;
+  font-family: Helsinki, Arial Black, Gadget, sans-serif;
+  text-shadow: 1px 1px 1px #42607a;
+  filter: dropshadow(color=#42607a, offx=1, offy=1);
+  margin-bottom: 20px;
+  color: #fff;
+}
 header h1 a {
   text-decoration: none;
   color: #90ee90;
@@ -53,7 +61,7 @@ header h2, .view h2 {
 .itens {
   list-style: none;
 }
-.item > p {
+.item > p, .view > p {
   font-family: Helsinki, Arial Black, Gadget, sans-serif;
   text-decoration: none;
   color: #fff;
@@ -103,4 +111,28 @@ footer {
   font-size: 12px;
   margin: 40px 0px;
   color: #627077;
+}
+form > p {
+    padding: 5px;
+}
+form > p > label {
+    float: left;
+    width: 90px;
+}
+form > p > input[type=text] {
+    border: none;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 8px;
+}
+.errorlist {
+    color: #fff;
+    list-style: none;
+    background: orange;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 5px;
+    width: 430px;
 }

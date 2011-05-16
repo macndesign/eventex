@@ -1,40 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>EventeX</title>
-    <meta charset="utf-8" />
-    <link href="{{ STATIC_URL }}css/default.css" rel="stylesheet" media="screen">
-</head>
-<body>
-<div class="container">
-    <header>
-        <hgroup>
-            <h1><a href="{% url index %}">EventeX</a></h1>
-            <h2>O evento mais sensacional do Rio depois do Dev in Rio!</h2>
-        </hgroup>
-    </header>
-    <div class="view">
-        <ul class="itens">
-            <li class="item">
-                <p>Bem-vindo ao EventeX</p>
-            </li>
-            <li class="item">
-                <p>Voc&ecirc; n&atilde;o pode perder essa oportunidade!</p>
-            </li>
-            <li class="item">
-                <br />
-                <p><strong>Abertura das inscri&ccedil;&otilde;es em 15/05/2011.</strong></p>
-            </li>
-        </ul>
-        <br />
-        <h2>Para d&uacute;vidas e mais informa&ccedil;&otilde;es entre em contato com
-            <a href="mailto:eventex@eventex.com">eventex@eventex.com.br</a></h2>
-    </div>
-    <footer>
-        <p>
-            &copy; 2011. <a href="mailto:eventex@eventex.com.br">EventeX</a>, som rights reserved.
-        </p>
-    </footer>
-</div>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <p>Bem-vindo ao EventeX</p>
+    <p>Você não pode perder essa oportunidade!</p>
+    <br />
+    <p><strong><a href="{% url subscription:subscribe %}">Inscreva-se Já!</a></strong></p>
+    <br />
+    <h2>Para d&uacute;vidas e mais informações entre em contato com
+        <a href="mailto:eventex@eventex.com">eventex@eventex.com.br</a>
+    </h2>
+{% endblock content %}
