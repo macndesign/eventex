@@ -1,0 +1,20 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "admin", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2011-05-15 22:02:49", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$0b747$5d6ae0de474120617470b4194fb479cfdaa5f895", 
+            "email": "macndesign@gmail.com", 
+            "date_joined": "2011-05-08 10:04:38"
+        }
+    }
+]
