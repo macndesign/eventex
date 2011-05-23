@@ -43,7 +43,7 @@ class SubscriptionForm(forms.ModelForm):
     cpf = forms.CharField(
         widget=forms.TextInput(attrs={'size':'30', 'maxlength':'11'}),
         validators=[validators.CpfValidator],
-        required=False
+        required=True
     )
     phone = PhoneField(required=False)
 
