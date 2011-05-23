@@ -14,6 +14,7 @@ def new(request):
         'name': _(u'Entre com seu nome'),
         'cpf': _(u'Digite o seu CPF sem pontos'),
         'email': _(u'Informe o seu email'),
+        'phone': _(u'99-99999999'),
     })
     context = RequestContext(request, {'form': form})
     return render_to_response('subscription/new.html', context)

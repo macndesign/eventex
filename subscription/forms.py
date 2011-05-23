@@ -6,10 +6,10 @@ from django.utils.translation import ugettext as _
 import validators
 
 class PhoneWidget(forms.MultiWidget):
-    def __init__(self, attrs=None):
+    def __init__(self, ddd_maxlength=2, tel_maxlength=8, attrs=None):
         widgets = (
-            forms.TextInput(attrs={'size':'1', 'maxlength':'2', 'value':'99'}),
-            forms.TextInput(attrs={'size':'7', 'maxlength':'8', 'value':'99999999'})
+            forms.TextInput(attrs={'size': str(ddd_maxlength-1), 'maxlength': str(ddd_maxlength)}),
+            forms.TextInput(attrs={'size': str(tel_maxlength-1), 'maxlength': str(tel_maxlength)})
         )
         super(PhoneWidget, self).__init__(widgets, attrs)
 
