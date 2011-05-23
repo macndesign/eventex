@@ -7,9 +7,14 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template.context import RequestContext
 from forms import SubscriptionForm
 from subscription.models import Subscription
+from django.utils.translation import ugettext as _
 
 def new(request):
-    form = SubscriptionForm()
+    form = SubscriptionForm(initial={
+        'name': _(u'Entre com seu nome'),
+        'cpf': _(u'Digite o seu CPF sem pontos'),
+        'email': _(u'Informe o seu email'),
+    })
     context = RequestContext(request, {'form': form})
     return render_to_response('subscription/new.html', context)
 
@@ -23,9 +28,9 @@ def create(request):
     subscription = form.save()
     
     send_mail(
-        subject=u'Inscrição no EventeX',
-        message=u'Obrigado por se inscrever no eventex!',
-        from_email='contato@eventex.com',
+        subject=_(u'Inscrição no EventeX'),
+        message=_(u'Obrigado por se inscrever no eventex!'),
+        from_email=_('contato@eventex.com'),
         recipient_list=['macndesign@gmail.com'],
     )
     

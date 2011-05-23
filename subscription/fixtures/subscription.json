@@ -1,0 +1,14 @@
+[
+    {
+        "pk": 1, 
+        "model": "subscription.subscription", 
+        "fields": {
+            "name": "Henrique Bastos",
+            "created_at": "2011-05-15 17:07:05", 
+            "paid": false, 
+            "phone": "21-9618-6180",
+            "cpf": "05633165780",
+            "email": "henrique@bastos.net"
+        }
+    }
+]
