@@ -1,0 +1,16 @@
+<div class="palestra">
+    <h2>
+        <a href="{% url core:talk_details talk.id %}">
+            {{ talk.start_time }} - {{ talk.title }}
+        </a>
+    </h2>
+    {% for speaker in talk.speaker.all %}
+        <h3>
+            <a href="{% url core:speaker speaker.slug %}"
+               title="{{ speaker.description|truncatewords:20 }}">
+               {{ speaker.name }}
+            </a>
+        </h3>
+    {% endfor %}
+    <p>{{ talk.description }}</p>
+</div>

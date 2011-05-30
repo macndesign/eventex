@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load slideshare %}
+{% load youtube %}
+
+{% block content %}
+    <h1>{{ talk.title }}</h1>
+    {% for speaker in talk.speaker.all %}
+        <h2>
+            <a href="{% url core:speaker speaker.slug %}"
+                    title="{{ speaker.description|truncatewords:20 }}">
+                {{ speaker.name }}
+            </a>
+        </h2>
+    {% endfor %}
+    <p>{{ talk.description }}</p>
+
+    {% for slide in slides %}
+        <p>{% slideshare slide.media_id slide.title %}</p>
+    {% endfor %}
+
+    {% for video in videos %}
+        <p>{% youtube video.media_id %}</p>
+    {% endfor %}
+
+    <p><a href="{% url core:talks %}">Voltar</a></p>
+{% endblock %}

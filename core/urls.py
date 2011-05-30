@@ -1,5 +1,8 @@
 from django.conf.urls.defaults import patterns, url
 
-urlpatterns = patterns('django.views.generic.simple',
-    url(r'^$', 'direct_to_template', {'template': 'index.html'}, name='index'),
+urlpatterns = patterns('core.views',
+    url(r'^$', 'homepage', name='index'),
+    url(r'^palestras/$', 'talks', name='talks'),
+    url(r'^palestra/(\d+)/$', 'talk_details', name='talk_details'),
+    url(r'^palestrante/([-\w]+)/$', 'speaker', name='speaker'),
 )
