@@ -1,0 +1,92 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "admin", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2011-06-01 20:11:18", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$677a8$0349e76ffad2269f0976ad3565bf80c4d9631101", 
+            "email": "macndesign@gmail.com", 
+            "date_joined": "2011-06-01 01:09:30"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "south.migrationhistory", 
+        "fields": {
+            "applied": "2011-06-01 04:09:43", 
+            "app_name": "core", 
+            "migration": "0001_initial"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "core.speaker", 
+        "fields": {
+            "url": "http://henriquebastos.net/", 
+            "description": "Apaixonado por tecnologia", 
+            "name": "Henrique Bastos", 
+            "avatar": "palestrantes/Henrique_Bastos.png", 
+            "slug": "henrique-bastos"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "core.contact", 
+        "fields": {
+            "kind": "P", 
+            "speaker": 1, 
+            "value": "21-9618-6180"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "core.talk", 
+        "fields": {
+            "start_time": "01:10:32", 
+            "description": "Um curso de django!", 
+            "speakers": [
+                1
+            ], 
+            "title": "Django"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "core.course", 
+        "fields": {
+            "slots": 20, 
+            "notes": "Aqui vem o conte\u00fado do curso", 
+            "speakers": [
+                1
+            ]
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "core.media", 
+        "fields": {
+            "media_id": "CpXz_LsBDBo", 
+            "type": "YT", 
+            "talk": 1, 
+            "title": "Django Framework Demo"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "core.media", 
+        "fields": {
+            "media_id": "1387499", 
+            "type": "SL", 
+            "talk": 1, 
+            "title": "testingslides-090505074507-phpapp02"
+        }
+    }
+]
