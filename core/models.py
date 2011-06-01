@@ -32,7 +32,7 @@ class Contact(models.Model):
         ('F', _(u'Fax')),
     )
 
-    speaker = models.ForeignKey('Speaker', verbose_name=_(u'Palestrante'))
+    speaker = models.ForeignKey('Speaker', verbose_name=_('Palestrante'))
     kind = models.CharField(max_length=1, choices=KINDS)
     value = models.CharField(max_length=255)
 
@@ -61,21 +61,30 @@ class Talk(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     start_time = models.TimeField(blank=True)
-    speakers = models.ManyToManyField('Speaker', verbose_name=_(u'Palestrante'))
+    speakers = models.ManyToManyField('Speaker', verbose_name=_('Palestrante'))
 
     objects = PeriodManager()
 
     class Meta:
-        verbose_name = _(u'Palestra')
+        verbose_name = _('Palestra')
 
     def __unicode__(self):
         return unicode(self.title)
+
+    @property
+    def slides(self):
+        return self.media_set.filter(type='SL')
+
+    @property
+    def videos(self):
+        return self.media_set.filter(type='YT')
 
 class Course(Talk):
     slots = models.IntegerField()
     notes = models.TextField()
 
-    objects = PeriodManager()
+    class Meta:
+        verbose_name = _('Curso')
 
 class CodingCourse(Course):
     class Meta:
@@ -92,7 +101,7 @@ class Media(models.Model):
 
     talk = models.ForeignKey('Talk')
     type = models.CharField(max_length=3, choices=MEDIAS)
-    title = models.CharField(_(u'Título'), max_length=255)
+    title = models.CharField(_(u'Título'), max_length=255, help_text=u'No caso do Slideshare será usado como doc_id.')
     media_id = models.CharField(max_length=255)
 
     def __unicode__(self):
