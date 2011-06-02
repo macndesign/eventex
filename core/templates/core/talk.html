@@ -6,7 +6,7 @@
     <h1>{{ talk.title }}</h1>
     {% for speaker in talk.speakers.all %}
         <h2>
-            <a href="{% url core:speaker speaker.slug %}"
+            Palestrante: <a href="{% url core:speaker speaker.slug %}"
                     title="{{ speaker.description|truncatewords:20 }}">
                 {{ speaker.name }}
             </a>
