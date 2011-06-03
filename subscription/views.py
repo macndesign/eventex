@@ -1,14 +1,33 @@
 # -*- coding: utf-8 -*-
 # Create your views here.
-from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, get_object_or_404
-from django.template.context import RequestContext
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 from forms import SubscriptionForm
 from subscription.models import Subscription
-from django.utils.translation import ugettext as _
+from subscription.utils import send_subscription_email
 
+class SubscriptionCreateView(CreateView):
+    form_class = SubscriptionForm
+    model = Subscription
+
+    def get_success_url(self):
+        return reverse('subscription:success', args=[self.object.pk])
+
+    def form_valid(self, form):
+        response = super(SubscriptionCreateView, self).form_valid(form)
+        # envia email
+        send_subscription_email(self.object)
+
+        return response
+
+class SubscriptionSuccessView(DetailView):
+    template_name = 'subscription/success.html'
+    model = Subscription
+
+
+
+'''
 def new(request):
     form = SubscriptionForm(initial={
         'name': _(u'Entre com seu nome'),
@@ -43,3 +62,4 @@ def success(request, pk):
     subscription = get_object_or_404(Subscription, pk=pk)
     context = RequestContext(request, {'subscription': subscription})
     return render_to_response('subscription/success.html', context)
+'''

@@ -3,7 +3,6 @@ from django import forms
 from django.core.validators import EMPTY_VALUES
 from models import Subscription
 from django.utils.translation import ugettext as _
-import validators
 
 class PhoneWidget(forms.MultiWidget):
     def __init__(self, ddd_maxlength=2, tel_maxlength=8, attrs=None):
@@ -42,7 +41,6 @@ class SubscriptionForm(forms.ModelForm):
     name = forms.CharField(widget=forms.TextInput(attrs={'size':'40'}))
     cpf = forms.CharField(
         widget=forms.TextInput(attrs={'size':'30', 'maxlength':'11'}),
-        validators=[validators.CpfValidator],
         required=True
     )
     phone = PhoneField(required=False)
