@@ -3,17 +3,6 @@ from datetime import time
 from django.db import models
 from django.utils.translation import ugettext as _
 
-# Create your managers here.
-class KindContactManager(models.Manager):
-    def __init__(self, kind):
-        super(KindContactManager, self).__init__()
-        self.kind = kind
-
-    def get_query_set(self):
-        qs = super(KindContactManager, self).get_query_set()
-        qs = qs.filter(kind=self.kind)
-        return qs
-
 # Create your models here.
 class Speaker(models.Model):
     name = models.CharField(max_length=255)
@@ -25,11 +14,21 @@ class Speaker(models.Model):
     def __unicode__(self):
         return self.name
 
+class KindContactManager(models.Manager):
+    def __init__(self, kind):
+        super(KindContactManager, self).__init__()
+        self.kind = kind
+
+    def get_query_set(self):
+        qs = super(KindContactManager, self).get_query_set()
+        qs = qs.filter(kind=self.kind)
+        return qs
+
 class Contact(models.Model):
     KINDS = (
-        ('P', _(u'Telefone')),
-        ('E', _(u'E-mail')),
-        ('F', _(u'Fax')),
+        ('P', _('Telefone')),
+        ('E', _('E-mail')),
+        ('F', _('Fax')),
     )
 
     speaker = models.ForeignKey('Speaker', verbose_name=_('Palestrante'))
